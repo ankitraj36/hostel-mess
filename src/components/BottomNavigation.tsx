@@ -16,8 +16,30 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({ currentHoste
   const effectiveHostel = currentHostel || (['boys', 'girls'].includes(storedHostel) ? storedHostel : undefined);
 
   const isBoys = effectiveHostel === 'boys';
-  const activePill = isBoys ? 'bg-blue-50 text-blue-700' : 'bg-pink-50 text-pink-700';
-  const activeDot = isBoys ? 'bg-blue-600' : 'bg-pink-600';
+  const isGirls = effectiveHostel === 'girls';
+
+  // Apply theme-specific bottom bar styling to reinforce hostel theme
+  const getNavContainerStyle = () => {
+    if (isBoys) {
+      return 'bg-[#EFF6FF]/95 border-blue-200/90 shadow-blue-500/5 text-blue-950';
+    }
+    if (isGirls) {
+      return 'bg-[#FDF2F8]/95 border-pink-200/90 shadow-pink-500/5 text-pink-950';
+    }
+    return 'bg-white/95 border-gray-200/90 shadow-black/5 text-gray-900';
+  };
+
+  const getActiveItemStyle = () => {
+    if (isBoys) return 'bg-blue-600 text-white shadow-xs font-bold';
+    if (isGirls) return 'bg-pink-600 text-white shadow-xs font-bold';
+    return 'bg-gray-900 text-white shadow-xs font-bold';
+  };
+
+  const getInactiveItemStyle = () => {
+    if (isBoys) return 'text-blue-900/70 hover:text-blue-900 hover:bg-blue-100/50 font-medium';
+    if (isGirls) return 'text-pink-900/70 hover:text-pink-900 hover:bg-pink-100/50 font-medium';
+    return 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/70 font-medium';
+  };
 
   const handleHostelNav = (targetPath: string) => {
     if (effectiveHostel) {
@@ -37,88 +59,60 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({ currentHoste
 
   return (
     <nav
-      aria-label="Mobile Bottom Navigation"
-      className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-lg border-t border-gray-200/80 safe-pb shadow-lg shadow-black/5"
+      aria-label="Thumb-friendly Mobile Bottom Navigation"
+      className={`md:hidden fixed bottom-0 left-0 right-0 z-50 backdrop-blur-lg border-t safe-pb shadow-lg transition-colors duration-200 ${getNavContainerStyle()}`}
     >
-      <div className="grid grid-cols-4 h-16 items-center max-w-md mx-auto px-2">
+      <div className="grid grid-cols-4 h-16 items-center max-w-md mx-auto px-2 gap-1">
         
         {/* 1. Home */}
         <NavLink
           to="/"
           end
           className={({ isActive }) =>
-            `flex flex-col items-center justify-center min-h-[44px] py-1 px-1.5 rounded-xl transition-all duration-200 select-none ${
-              isActive ? `${activePill} font-bold` : 'text-gray-500 hover:text-gray-900 font-medium'
+            `flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl transition-all duration-150 select-none ${
+              isActive ? getActiveItemStyle() : getInactiveItemStyle()
             }`
           }
         >
-          {({ isActive }) => (
-            <>
-              <div className="relative flex items-center justify-center">
-                <Home className="w-5 h-5" />
-                {isActive && (
-                  <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${activeDot}`} />
-                )}
-              </div>
-              <span className="text-[11px] mt-0.5 tracking-tight">Home</span>
-            </>
-          )}
+          <Home className="w-5 h-5 shrink-0" />
+          <span className="text-[11px] mt-0.5 tracking-tight font-medium">Home</span>
         </NavLink>
 
         {/* 2. Today's Menu */}
         <button
           type="button"
           onClick={() => handleHostelNav('')}
-          className={`flex flex-col items-center justify-center min-h-[44px] py-1 px-1.5 rounded-xl transition-all duration-200 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 ${
-            isTodayActive ? `${activePill} font-bold` : 'text-gray-500 hover:text-gray-900 font-medium'
+          className={`flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl transition-all duration-150 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current ${
+            isTodayActive ? getActiveItemStyle() : getInactiveItemStyle()
           }`}
         >
-          <div className="relative flex items-center justify-center">
-            <Utensils className="w-5 h-5" />
-            {isTodayActive && (
-              <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${activeDot}`} />
-            )}
-          </div>
-          <span className="text-[11px] mt-0.5 tracking-tight">Today</span>
+          <Utensils className="w-5 h-5 shrink-0" />
+          <span className="text-[11px] mt-0.5 tracking-tight font-medium">Today</span>
         </button>
 
         {/* 3. Weekly Menu */}
         <button
           type="button"
           onClick={() => handleHostelNav('/weekly')}
-          className={`flex flex-col items-center justify-center min-h-[44px] py-1 px-1.5 rounded-xl transition-all duration-200 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 ${
-            isWeeklyActive ? `${activePill} font-bold` : 'text-gray-500 hover:text-gray-900 font-medium'
+          className={`flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl transition-all duration-150 select-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current ${
+            isWeeklyActive ? getActiveItemStyle() : getInactiveItemStyle()
           }`}
         >
-          <div className="relative flex items-center justify-center">
-            <Calendar className="w-5 h-5" />
-            {isWeeklyActive && (
-              <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${activeDot}`} />
-            )}
-          </div>
-          <span className="text-[11px] mt-0.5 tracking-tight">Weekly</span>
+          <Calendar className="w-5 h-5 shrink-0" />
+          <span className="text-[11px] mt-0.5 tracking-tight font-medium">Weekly</span>
         </button>
 
         {/* 4. About */}
         <NavLink
           to="/about"
           className={({ isActive }) =>
-            `flex flex-col items-center justify-center min-h-[44px] py-1 px-1.5 rounded-xl transition-all duration-200 select-none ${
-              isActive ? `${activePill} font-bold` : 'text-gray-500 hover:text-gray-900 font-medium'
+            `flex flex-col items-center justify-center min-h-[48px] py-1 px-1 rounded-xl transition-all duration-150 select-none ${
+              isActive ? getActiveItemStyle() : getInactiveItemStyle()
             }`
           }
         >
-          {({ isActive }) => (
-            <>
-              <div className="relative flex items-center justify-center">
-                <Info className="w-5 h-5" />
-                {isActive && (
-                  <span className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${activeDot}`} />
-                )}
-              </div>
-              <span className="text-[11px] mt-0.5 tracking-tight">About</span>
-            </>
-          )}
+          <Info className="w-5 h-5 shrink-0" />
+          <span className="text-[11px] mt-0.5 tracking-tight font-medium">About</span>
         </NavLink>
 
       </div>
