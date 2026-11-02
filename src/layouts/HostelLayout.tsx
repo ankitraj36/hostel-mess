@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 import { HostelType } from '../data/menuTypes';
 import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import { BottomNavigation } from '../components/BottomNavigation';
 
 interface HostelLayoutProps {
@@ -40,6 +41,9 @@ export const HostelLayout: React.FC<HostelLayoutProps> = ({ hostelType, children
       <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 sm:py-5 md:py-6 pb-28 sm:pb-24 md:pb-12">
         {children || <Outlet />}
       </main>
+
+      {/* Campus Footer with Legal & Cookie Links */}
+      <Footer className={isBoys ? 'bg-blue-50/40' : isGirls ? 'bg-pink-50/40' : ''} />
 
       {/* Fixed Mobile Bottom Navigation */}
       <BottomNavigation currentHostel={hostelType} />

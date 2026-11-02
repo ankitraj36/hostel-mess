@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Clock, Calendar, ShieldCheck, Sparkles, ChefHat, Building2 } from 'lucide-react';
 import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import { BottomNavigation } from '../components/BottomNavigation';
 
 export const AboutPage: React.FC = () => {
@@ -139,6 +140,22 @@ export const AboutPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Mess Fee & Rebate Policy Section */}
+        <section className="mb-8">
+          <div className="bg-blue-50/70 border border-blue-200/80 rounded-2xl p-5 sm:p-6 text-xs text-gray-700 space-y-2">
+            <h3 className="font-heading font-bold text-sm text-blue-950 flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-blue-700" />
+              Mess Dining Fee, Rebate & Refund Guidelines
+            </h3>
+            <p className="text-blue-900/90 leading-relaxed">
+              <strong>Informational Platform:</strong> HOSTEL MESS is a completely free student service and does not collect payments, dining card recharges, or subscription fees online.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              <strong>Mess Rebates:</strong> Any hostel mess rebates (for authorized leaves, internships, semester breaks, or medical absences exceeding the university threshold) must be claimed physically through written application endorsed by the Hostel Warden and submitted to the <strong>Office of the Chief Warden, ITER Campus-1</strong>.
+            </p>
+          </div>
+        </section>
+
         {/* Return Button */}
         <div className="text-center pt-2">
           <Link
@@ -151,10 +168,7 @@ export const AboutPage: React.FC = () => {
         </div>
       </main>
 
-      <footer className="w-full border-t border-gray-100 py-6 text-center text-xs text-gray-400 bg-white">
-        <p className="font-medium text-gray-500">HOSTEL MESS · Good Food. Every Day.</p>
-        <p className="text-[11px] text-gray-400 mt-1">Siksha 'O' Anusandhan (Deemed to be University), Bhubaneswar</p>
-      </footer>
+      <Footer />
 
       <BottomNavigation />
     </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles, UtensilsCrossed } from 'lucide-react';
 import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 import { BottomNavigation } from '../components/BottomNavigation';
 import { HostelSelectionCard } from '../components/HostelSelectionCard';
 import { boysHostelInfo } from '../data/boysMenu';
@@ -54,12 +55,10 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Minimal Campus Footer Note */}
-        <footer className="text-center text-[11px] text-gray-400 mt-2 sm:mt-4">
-          <p className="font-medium text-gray-500">ITER Campus-1 · Siksha 'O' Anusandhan, Bhubaneswar</p>
-        </footer>
-
       </main>
+
+      {/* Campus Footer with Legal & Cookie Links */}
+      <Footer />
 
       {/* Thumb-friendly Mobile Bottom Navigation */}
       <BottomNavigation />
