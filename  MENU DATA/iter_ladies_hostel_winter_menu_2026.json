@@ -1,0 +1,1452 @@
+{
+  "title": "Proposed ITER Ladies Hostels Winter Menu 2026",
+  "weeks": [
+    {
+      "week": 1,
+      "days": [
+        {
+          "day": "Monday",
+          "breakfast": [
+            "Idli (4pc)",
+            "Sambhar",
+            "Coconut Chutney",
+            "Banana Chutney",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Veg Besara"
+            ],
+            "nonVeg": [
+              "Egg Curry"
+            ],
+            "sideItems": [
+              "Mix Veg Fry",
+              "Dahi Boondi"
+            ]
+          },
+          "snacks": [
+            "Samosa (Big 2pcs)",
+            "Imli Chutney",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Chole Aloo"
+            ],
+            "nonVeg": [
+              "Chicken Curry"
+            ],
+            "sideItems": [
+              "Aloo Cluster Beans / Hudadanga Bhaja"
+            ],
+            "dessert": [
+              "Rasgulla"
+            ]
+          }
+        },
+        {
+          "day": "Tuesday",
+          "breakfast": [
+            "Bara (4pc)",
+            "Ghuguni",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Soyabean Aloo Dry"
+            ],
+            "nonVeg": [
+              "Fish Besara"
+            ],
+            "sideItems": [
+              "Kadhi Pakoda",
+              "Papad"
+            ]
+          },
+          "snacks": [
+            "Pasta",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Mix Veg Bhurji"
+            ],
+            "nonVeg": [
+              "Egg Bhurji"
+            ],
+            "sideItems": [
+              "Crispy Aloo Bhindi",
+              "Salad"
+            ],
+            "dessert": [
+              "Khira Gaja"
+            ]
+          }
+        },
+        {
+          "day": "Wednesday",
+          "breakfast": [
+            "Uttapam (2pc)",
+            "Sambar",
+            "Chana Dal",
+            "Tomato Chutney",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Mushroom Peas Masala"
+            ],
+            "nonVeg": [
+              "Prawn Aloo Curry (4 pc)"
+            ],
+            "sideItems": [
+              "Fried Tomato Chutney with Onion"
+            ]
+          },
+          "snacks": [
+            "Cream Bun",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Veg Dum Biryani",
+              "Paneer Masala"
+            ],
+            "nonVeg": [
+              "Chicken Dum Biryani with Egg"
+            ],
+            "sideItems": [
+              "Raita (Cucumber & Onion)"
+            ],
+            "dessert": [
+              "Gulab Jamun"
+            ]
+          }
+        },
+        {
+          "day": "Thursday",
+          "breakfast": [
+            "Masala Upma",
+            "Aloo Curry",
+            "Coconut Chutney",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal",
+              "Dalma"
+            ],
+            "veg": [
+              "Aloo Cabbage Semi-Gravy"
+            ],
+            "nonVeg": [
+              "Fried Egg Masala"
+            ],
+            "sideItems": [
+              "Ambula Rai",
+              "Fryums"
+            ]
+          },
+          "snacks": [
+            "Papdi Chat (4-5 big size)",
+            "Papdi",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Masala Fried Rice",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Veg Manchurian (Dry)"
+            ],
+            "nonVeg": [],
+            "sideItems": [
+              "Gobhi Bhaja",
+              "Papad"
+            ],
+            "dessert": [
+              "Rice Kheer"
+            ]
+          }
+        },
+        {
+          "day": "Friday",
+          "breakfast": [
+            "Bread (4pc)",
+            "Aloo Chop (2pc)",
+            "Banana/Egg",
+            "Boiled Egg",
+            "Jam",
+            "Butter",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Besan Aloo Curry"
+            ],
+            "nonVeg": [
+              "Fish Tawa Fry"
+            ],
+            "sideItems": [
+              "Kalara Chips",
+              "Rasama"
+            ]
+          },
+          "snacks": [
+            "Egg Noodles",
+            "Paneer Veg Noodles",
+            "Sauce",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Chilly Gobi"
+            ],
+            "nonVeg": [
+              "Chilly Chicken"
+            ],
+            "sideItems": [
+              "Aloo Beans Bhaja",
+              "Fryums"
+            ],
+            "dessert": [
+              "Smoothie"
+            ]
+          }
+        },
+        {
+          "day": "Saturday",
+          "breakfast": [
+            "Puri (4pc)",
+            "Chole",
+            "Aloo Curry",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Mushroom Aloo Curry"
+            ],
+            "nonVeg": [
+              "Andhra Chicken"
+            ],
+            "sideItems": [
+              "Veg Mix Bhaja",
+              "Papad"
+            ]
+          },
+          "snacks": [
+            "Gupchup (10pcs)",
+            "Aloo Chokha",
+            "Matar",
+            "Onion",
+            "Dhania",
+            "Imli Pani",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Andhra Style Paneer"
+            ],
+            "nonVeg": [
+              "Fish Curry"
+            ],
+            "sideItems": [
+              "Mix Veg Chips"
+            ],
+            "dessert": [
+              "Paper Boat (Soft Drink)"
+            ]
+          }
+        },
+        {
+          "day": "Sunday",
+          "breakfast": [
+            "Masala Dosa",
+            "Masala Aloo",
+            "Coconut Chutney",
+            "Sambar",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Soyabean Dopiyaza"
+            ],
+            "nonVeg": [
+              "Fried Egg Masala Curry"
+            ],
+            "sideItems": [
+              "Veg Tawa Fry",
+              "Butter Milk"
+            ]
+          },
+          "snacks": [
+            "Biscuit",
+            "Milkshake (200ml)"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Veg Dum Biryani",
+              "Paneer Masala"
+            ],
+            "nonVeg": [
+              "Chicken Dum Biryani with Egg"
+            ],
+            "sideItems": [
+              "Raita (Cucumber & Onion)"
+            ],
+            "dessert": [
+              "Chocolate Ice-Cream (Amul)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "days": [
+        {
+          "day": "Monday",
+          "breakfast": [
+            "Masala Idli (4pc) (Without Sauce)",
+            "Coconut Chutney",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dalma"
+            ],
+            "veg": [
+              "Potala Aloo Curry"
+            ],
+            "nonVeg": [],
+            "sideItems": [
+              "Khajur Tomato Khata",
+              "Papad"
+            ]
+          },
+          "snacks": [
+            "Vada Pav",
+            "Chutney",
+            "Fried Chilly",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Buta Aloo Khatta"
+            ],
+            "nonVeg": [
+              "Egg Curry"
+            ],
+            "sideItems": [
+              "French Fries",
+              "Potato Salad"
+            ],
+            "dessert": [
+              "Rice Kheer"
+            ]
+          }
+        },
+        {
+          "day": "Tuesday",
+          "breakfast": [
+            "Masala Upma",
+            "Ghuguni",
+            "Coconut Chutney",
+            "Banana (1pc)",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Besan Aloo Curry"
+            ],
+            "nonVeg": [
+              "Fish Curry (Homestyle)"
+            ],
+            "sideItems": [
+              "Mix Veg Chips",
+              "Dahi Salad"
+            ]
+          },
+          "snacks": [
+            "Egg Chop (3pc)",
+            "Veg Chop (3pc)",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Aloo Potala Kassa"
+            ],
+            "nonVeg": [
+              "Chicken Aloo Kassa"
+            ],
+            "sideItems": [
+              "Mix Bhaja"
+            ],
+            "dessert": [
+              "Gulabjamun"
+            ]
+          }
+        },
+        {
+          "day": "Wednesday",
+          "breakfast": [
+            "Bread (4pc)",
+            "Omelette with Onion",
+            "Aloo Chop (2pc)",
+            "Banana",
+            "Jam",
+            "Butter",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Mushroom Aloo Besara (with Amul)"
+            ],
+            "nonVeg": [
+              "Fried Egg Aloo Curry"
+            ],
+            "sideItems": [
+              "Fried Tomato Chutney with Onion",
+              "Papad"
+            ]
+          },
+          "snacks": [
+            "Soya Sticks",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Veg Dum Biryani",
+              "Paneer Masala"
+            ],
+            "nonVeg": [
+              "Chicken Dum Biryani with Boiled Egg"
+            ],
+            "sideItems": [
+              "Thick Raita"
+            ],
+            "dessert": [
+              "Paper Boat"
+            ]
+          }
+        },
+        {
+          "day": "Thursday",
+          "breakfast": [
+            "Uttapam (2pc)",
+            "Sambhar",
+            "Coconut Chutney",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Soyabean Aloo Kassa"
+            ],
+            "nonVeg": [],
+            "sideItems": [
+              "Dahi Boondi",
+              "Badi Choor[a]"
+            ]
+          },
+          "snacks": [
+            "Sambhar Vada (3pcs)",
+            "With Ssu",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Aloo Buta Curry"
+            ],
+            "nonVeg": [
+              "Egg Masala"
+            ],
+            "sideItems": [
+              "Gobhi Aloo Bhaja"
+            ],
+            "dessert": [
+              "Jalebi"
+            ]
+          }
+        },
+        {
+          "day": "Friday",
+          "breakfast": [
+            "Puri (4pc)",
+            "Aloo Ghuguni Curry",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Paneer Butter Masala"
+            ],
+            "nonVeg": [
+              "Chicken Butter Masala"
+            ],
+            "sideItems": [
+              "Cabbage Matar Fry",
+              "Fryums"
+            ]
+          },
+          "snacks": [
+            "Papdi Chat (4 big size)",
+            "Chunguni (with Imli)",
+            "Chutney",
+            "Dahi Tomato",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Chilly Soyabean"
+            ],
+            "nonVeg": [
+              "Chilly Chicken"
+            ],
+            "sideItems": [
+              "Aloo Beans Bhaja",
+              "Salad"
+            ],
+            "dessert": [
+              "Khira Gaja"
+            ]
+          }
+        },
+        {
+          "day": "Saturday",
+          "breakfast": [
+            "Bara (4pc)",
+            "Ghuguni",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Veg Ghanta"
+            ],
+            "nonVeg": [
+              "Non-Veg Ghanta"
+            ],
+            "sideItems": [
+              "Potala Aloo Bhaja",
+              "Dahi Salad"
+            ]
+          },
+          "snacks": [
+            "Aloo Tikki Chat",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Mushroom Masala (Home Style)"
+            ],
+            "nonVeg": [
+              "Chicken Hyderabadi"
+            ],
+            "sideItems": [
+              "Veg Chips"
+            ],
+            "dessert": [
+              "Sujji Halwa"
+            ]
+          }
+        },
+        {
+          "day": "Sunday",
+          "breakfast": [
+            "Masala Dosa with Masala Aloo",
+            "Coconut Chutney",
+            "Sambar",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Alu Paneer Matar Curry"
+            ],
+            "nonVeg": [
+              "Fish Aloo Curry"
+            ],
+            "sideItems": [
+              "Aloo Drumstick Besara (Dry)",
+              "Fryums"
+            ]
+          },
+          "snacks": [
+            "Cake / Biscuits",
+            "Smoothie"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Veg Paneer Dum Biryani",
+              "Paneer Masala"
+            ],
+            "nonVeg": [
+              "Chicken Dum Biryani with Boiled Egg"
+            ],
+            "sideItems": [
+              "Thick Raita"
+            ],
+            "dessert": [
+              "Ice Cream (Amul)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "days": [
+        {
+          "day": "Monday",
+          "breakfast": [
+            "Millet Idli (4pc)",
+            "Sambhar",
+            "Coconut Chutney",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dalma"
+            ],
+            "veg": [
+              "Tomato Aloo Bharta"
+            ],
+            "nonVeg": [
+              "Egg Aloo Curry (Home Style)"
+            ],
+            "sideItems": [
+              "Mix Chips",
+              "Dahi Salad"
+            ]
+          },
+          "snacks": [
+            "Cabbage Pakoda (4pc)",
+            "Green Chutney",
+            "Sauce",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Pindi Chole"
+            ],
+            "nonVeg": [],
+            "sideItems": [
+              "Mix Vaja"
+            ],
+            "dessert": [
+              "Rice Kheer"
+            ]
+          }
+        },
+        {
+          "day": "Tuesday",
+          "breakfast": [
+            "Chakuli (2pc)",
+            "Aloo Matar Ghuguni",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Mushroom Masala"
+            ],
+            "nonVeg": [
+              "Prawn Aloo Curry (4pc)"
+            ],
+            "sideItems": [
+              "Aloo Potal Chips",
+              "Salad"
+            ]
+          },
+          "snacks": [
+            "Chhula Bara (6pc)",
+            "Tomato Chutney",
+            "Imli Chutney",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Paneer Tadka"
+            ],
+            "nonVeg": [
+              "Egg Tadka"
+            ],
+            "sideItems": [
+              "Bhindi Aloo Bhaja"
+            ],
+            "dessert": [
+              "Rasgulla"
+            ]
+          }
+        },
+        {
+          "day": "Wednesday",
+          "breakfast": [
+            "Bread (4pcs)",
+            "Butter",
+            "Omelette with Onion",
+            "Banana",
+            "Jam",
+            "Butter",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Cauliflower Aloo Curry"
+            ],
+            "nonVeg": [
+              "Chicken Curry"
+            ],
+            "sideItems": [
+              "Beans Aloo Bhaja",
+              "Fryums"
+            ]
+          },
+          "snacks": [
+            "Sweetcorn (Onion, Cucumber, Tomato Separately)",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Veg Dum Biryani",
+              "Paneer Masala"
+            ],
+            "nonVeg": [
+              "Chicken Dum Biryani with Egg"
+            ],
+            "sideItems": [
+              "Raita (Cucumber & Onion)"
+            ],
+            "dessert": [
+              "Sweet Curd Pkt"
+            ]
+          }
+        },
+        {
+          "day": "Thursday",
+          "breakfast": [
+            "Uttapam (2pc)",
+            "Sambhar",
+            "Coconut Chutney",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dalma"
+            ],
+            "veg": [
+              "Kachalu with Pakoda"
+            ],
+            "nonVeg": [
+              "Fried Egg Masala"
+            ],
+            "sideItems": [
+              "Mix Chips",
+              "Salad"
+            ]
+          },
+          "snacks": [
+            "Dahi Vada (3pc)",
+            "Aloo Dum",
+            "Onion",
+            "Sev",
+            "Green Chutney",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Butta Aloo Lauki Curry"
+            ],
+            "nonVeg": [],
+            "sideItems": [
+              "Aloo Potal Bhaja",
+              "Salad"
+            ],
+            "dessert": [
+              "Gulab Jamun"
+            ]
+          }
+        },
+        {
+          "day": "Friday",
+          "breakfast": [
+            "Masala Semiya Upma",
+            "Ghuguni",
+            "Banana",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Mushroom Besara with Ambula"
+            ],
+            "nonVeg": [
+              "Fish Aloo Curry"
+            ],
+            "sideItems": [
+              "Aloo Chips",
+              "Butter Milk"
+            ]
+          },
+          "snacks": [
+            "Egg Chop (3pc)",
+            "Veg Chop (3pc)",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Chilly Gobi"
+            ],
+            "nonVeg": [
+              "Chilly Chicken"
+            ],
+            "sideItems": [
+              "Aloo Bhindi Bhaja",
+              "Papad"
+            ],
+            "dessert": [
+              "Paper Boat"
+            ]
+          }
+        },
+        {
+          "day": "Saturday",
+          "breakfast": [
+            "Bara (4pcs)",
+            "Ghuguni",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Paneer Dopiyaza"
+            ],
+            "nonVeg": [
+              "Chicken Korma"
+            ],
+            "sideItems": [
+              "Fried Tomato Chutney with Onion",
+              "Papad"
+            ]
+          },
+          "snacks": [
+            "Gupchup (10pcs)",
+            "Aloo Chutney",
+            "Matar",
+            "Onion",
+            "Dhania",
+            "Imli Pani",
+            "Pudina Pani",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Soyabean Masala"
+            ],
+            "nonVeg": [
+              "Egg Masala"
+            ],
+            "sideItems": [
+              "Aloo Bonda Bhaja",
+              "Salad"
+            ],
+            "dessert": [
+              "Khira Gaja"
+            ]
+          }
+        },
+        {
+          "day": "Sunday",
+          "breakfast": [
+            "Masala Dosa (1pc)",
+            "Sambhar",
+            "Chutney",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Aloo Besan Curry"
+            ],
+            "nonVeg": [
+              "Fish Besara Curry"
+            ],
+            "sideItems": [
+              "Vegetable Tawa Fry",
+              "Dahi Chunka"
+            ]
+          },
+          "snacks": [
+            "Cream Bun",
+            "Milkshake"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Veg Dum Biryani",
+              "Paneer Masala"
+            ],
+            "nonVeg": [
+              "Chicken Dum Biryani with Egg"
+            ],
+            "sideItems": [
+              "Raita (Cucumber & Onion)"
+            ],
+            "dessert": [
+              "Cone Ice Cream (Amul)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "days": [
+        {
+          "day": "Monday",
+          "breakfast": [
+            "Bara (4pc)",
+            "Ghuguni",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Mix Veg with Paneer"
+            ],
+            "nonVeg": [
+              "Egg Masala"
+            ],
+            "sideItems": [
+              "Aloo Bharta",
+              "Papad"
+            ]
+          },
+          "snacks": [
+            "Corn Chat (Onion, Cucumber, Tomato Separately)",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Janta Aloo Buta Dal Curry"
+            ],
+            "nonVeg": [
+              "Chicken Curry"
+            ],
+            "sideItems": [
+              "French Fries",
+              "Potato Salad"
+            ],
+            "dessert": [
+              "Rice Kheer"
+            ]
+          }
+        },
+        {
+          "day": "Tuesday",
+          "breakfast": [
+            "Upma",
+            "Aloo-Onion Curry",
+            "Mint Chutney",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Soyabean Aloo Curry"
+            ],
+            "nonVeg": [
+              "Chicken Kassa"
+            ],
+            "sideItems": [
+              "Mix Vegetable Bhaja",
+              "Dahi Salad"
+            ]
+          },
+          "snacks": [
+            "Papdi Chat (3-4 big pc)",
+            "Onion",
+            "Sev",
+            "Tomato",
+            "Imli Chutney",
+            "Curd",
+            "Ghuguni",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Chilly Mushroom"
+            ],
+            "nonVeg": [
+              "Egg Aloo Curry"
+            ],
+            "sideItems": [
+              "Vegetable Chips",
+              "Salad"
+            ],
+            "dessert": [
+              "Gulab Jamun"
+            ]
+          }
+        },
+        {
+          "day": "Wednesday",
+          "breakfast": [
+            "Bread (4pcs)",
+            "Aloo Chop (Big 2pcs)",
+            "Omelette with Onion",
+            "Banana",
+            "Jam",
+            "Butter",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Cauliflower Aloo Curry"
+            ],
+            "nonVeg": [
+              "Chicken Curry"
+            ],
+            "sideItems": [
+              "Fried Tomato Besara with Onion",
+              "Chilly",
+              "Coriander",
+              "Lemon",
+              "Papad"
+            ]
+          },
+          "snacks": [
+            "Soya Sticks (1 Packet)",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Veg Dum Biryani",
+              "Paneer Masala"
+            ],
+            "nonVeg": [
+              "Chicken Dum Biryani with Egg"
+            ],
+            "sideItems": [
+              "Thick Raita"
+            ],
+            "dessert": [
+              "Cup Ice Cream (Vanilla/Choco)"
+            ]
+          }
+        },
+        {
+          "day": "Thursday",
+          "breakfast": [
+            "Idli (4pc)",
+            "Sambhar",
+            "Coconut Chutney",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Aloo Besan Curry"
+            ],
+            "nonVeg": [
+              "Egg Bhurji"
+            ],
+            "sideItems": [
+              "Ambula Rai",
+              "Salad"
+            ]
+          },
+          "snacks": [
+            "Vada Pav with Fried Chilly",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Potala Aloo Rassa"
+            ],
+            "nonVeg": [],
+            "sideItems": [
+              "Mix Bhaja"
+            ],
+            "dessert": [
+              "Suji Halwa with Dry Fruits"
+            ]
+          }
+        },
+        {
+          "day": "Friday",
+          "breakfast": [
+            "Chakuli (2pc)",
+            "Ghuguni",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Mushroom Besara with Ambula"
+            ],
+            "nonVeg": [
+              "Fish Aloo Curry"
+            ],
+            "sideItems": [
+              "Karela Aloo Chips",
+              "Butter Milk"
+            ]
+          },
+          "snacks": [
+            "Sweet Corn (Onion, Cucumber, Tomato Separately)",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Chilly Paneer"
+            ],
+            "nonVeg": [
+              "Chilli Chicken"
+            ],
+            "sideItems": [
+              "Aloo Beans Bhaja"
+            ],
+            "dessert": [
+              "Paper Boat"
+            ]
+          }
+        },
+        {
+          "day": "Saturday",
+          "breakfast": [
+            "Poha (with Mungfali)",
+            "Ghuguni",
+            "Banana (1pc)",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal Fry"
+            ],
+            "veg": [
+              "Aloo Cabbage Dry"
+            ],
+            "nonVeg": [
+              "Chicken Aloo Home Style"
+            ],
+            "sideItems": [
+              "Aloo Beans Bhaja",
+              "Dahi Salad"
+            ]
+          },
+          "snacks": [
+            "Veg Schezwan Noodles with Paneer",
+            "Tea"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Chilly Soyabean"
+            ],
+            "nonVeg": [
+              "Fried Egg Masala"
+            ],
+            "sideItems": [
+              "Aloo Bhindi / Potala Bhaja",
+              "Salad"
+            ],
+            "dessert": [
+              "Sundhi/Smoothie"
+            ]
+          }
+        },
+        {
+          "day": "Sunday",
+          "breakfast": [
+            "Masala Dosa (1pc)",
+            "Coconut Chutney",
+            "Sambar",
+            "Tea"
+          ],
+          "lunch": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Potala Kassa (Semi-Gravy)"
+            ],
+            "nonVeg": [
+              "Fish Tawa Fry"
+            ],
+            "sideItems": [
+              "Kadhi with Pakodi",
+              "Papad"
+            ]
+          },
+          "snacks": [
+            "Cake/Biscuits",
+            "Coffee"
+          ],
+          "dinner": {
+            "common": [
+              "Rice (Arua & Usuna)",
+              "Roti",
+              "Dal"
+            ],
+            "veg": [
+              "Veg Dum Biryani",
+              "Paneer Masala"
+            ],
+            "nonVeg": [
+              "Chicken Dum Biryani with Egg"
+            ],
+            "sideItems": [
+              "Thick Raita"
+            ],
+            "dessert": [
+              "Rasgulla"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

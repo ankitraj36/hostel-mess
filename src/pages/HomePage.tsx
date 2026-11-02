@@ -70,16 +70,16 @@ export const HomePage: React.FC = () => {
               <div className="w-8 h-8 rounded-lg bg-pink-100 text-pink-700 mx-auto flex items-center justify-center mb-2">
                 <CheckCircle2 className="w-4 h-4" />
               </div>
-              <h4 className="text-xs font-bold text-gray-900">Weekly Schedule</h4>
-              <p className="text-[11px] text-gray-500 mt-0.5">Full 7-day breakfast to dinner menus</p>
+              <h4 className="text-xs font-bold text-gray-900">Weekly & 4-Week Cycles</h4>
+              <p className="text-[11px] text-gray-500 mt-0.5">Boys weekly menu & Ladies 4-week monthly rotation</p>
             </div>
 
             <div className="p-3.5 rounded-xl bg-gray-50/70 border border-gray-100 col-span-2 sm:col-span-1">
               <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center mb-2">
                 <ShieldCheck className="w-4 h-4" />
               </div>
-              <h4 className="text-xs font-bold text-gray-900">Pure Vegetarian</h4>
-              <p className="text-[11px] text-gray-500 mt-0.5">Hygienic campus mess certified diet</p>
+              <h4 className="text-xs font-bold text-gray-900">Veg & Non-Veg Options</h4>
+              <p className="text-[11px] text-gray-500 mt-0.5">Choice of paneer, fish, chicken, egg & sweets</p>
             </div>
 
           </div>

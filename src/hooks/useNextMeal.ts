@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Meal, HostelType } from '../data/menuTypes';
-import { getTodayMenu, getHostelInfo } from '../data';
+import { getTodayMenu, getHostelWeek, getCurrentWeekNumber } from '../data';
 
 export interface NextMealState {
   meal: Meal | null;
@@ -11,7 +11,7 @@ export interface NextMealState {
   timeNote: string;
 }
 
-export function useNextMeal(hostelType: HostelType): NextMealState {
+export function useNextMeal(hostelType: HostelType, weekNumber?: number): NextMealState {
   const [now, setNow] = useState<Date>(() => new Date());
 
   useEffect(() => {
@@ -21,8 +21,9 @@ export function useNextMeal(hostelType: HostelType): NextMealState {
     return () => clearInterval(timer);
   }, []);
 
-  const todayMenu = getTodayMenu(hostelType, now);
-  const hostel = getHostelInfo(hostelType);
+  const effectiveWeek = weekNumber ?? getCurrentWeekNumber(now);
+  const todayMenu = getTodayMenu(hostelType, now, effectiveWeek);
+  const currentWeekMenu = getHostelWeek(hostelType, effectiveWeek);
 
   if (!todayMenu || todayMenu.meals.length === 0) {
     return {
@@ -169,15 +170,15 @@ export function useNextMeal(hostelType: HostelType): NextMealState {
   const tomorrow = new Date(now);
   tomorrow.setDate(tomorrow.getDate() + 1);
   const tomorrowDayIndex = tomorrow.getDay();
-  const tomorrowMenu = hostel.weeklyMenu.find((m) => m.dayIndex === tomorrowDayIndex) || hostel.weeklyMenu[0];
-  const tomorrowBreakfast = tomorrowMenu.meals.find((m) => m.type === 'breakfast') || tomorrowMenu.meals[0];
+  const tomorrowDayMenu = currentWeekMenu.days.find((m) => m.dayIndex === tomorrowDayIndex) || currentWeekMenu.days[0];
+  const tomorrowBreakfast = tomorrowDayMenu.meals.find((m) => m.type === 'breakfast') || tomorrowDayMenu.meals[0];
 
   return {
     meal: tomorrowBreakfast,
     statusLabel: 'TOMORROW MORNING',
     isCurrentlyServing: false,
     isTomorrow: true,
-    targetDayName: tomorrowMenu.day,
+    targetDayName: tomorrowDayMenu.day,
     timeNote: `Mess opens at ${tomorrowBreakfast.startTime} tomorrow`,
   };
 }

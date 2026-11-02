@@ -1,0 +1,216 @@
+{
+  "title": "ITER Boys' Hostel Rainy/Winter Mess Menu 2026",
+  "institution": "Siksha 'O' Anusandhan (Deemed to be University), Bhubaneswar, Odisha",
+  "campus": "ITER Campus-1",
+  "rotation": "weekly",
+  "sourceNote": "Transcribed from a photo of the notice board dated 29/09/2026. Same menu repeats every week.",
+  "notices": [
+    "Usuna and Arua rice both will be served in lunch and dinner.",
+    "Lunch & dinner branded sweet pickle is mandatory.",
+    "Only homemade Sriram papad and Lujat papad should be used."
+  ],
+  "brandsAndPortions": {
+    "paneer": "Pragati / Omfed / Milky Moo",
+    "dahi": "Pragati / Omfed / Milky Moo",
+    "sweet": "60 g",
+    "paneerPortion": "80 g",
+    "fish": "120 g",
+    "chicken": null,
+    "egg": "2 pcs"
+  },
+  "needsVerification": [
+    "Monday lunch: meaning of (O) after Besan Curry and (E) after Sagamooga is not clear",
+    "Friday lunch: Veg Biriyani, Raita and Sriram Papad assumed to be served with both options",
+    "Saturday snacks: 'Nadia Puja' spelling unclear",
+    "Saturday dinner: side item partly hidden, read as 'Cabbage Bhaja, Papad'; 'Mushroom Do Pyaza' read from 'Do Pizza'",
+    "Sunday dinner: some words hidden by glare (roti, cauliflower item name)",
+    "Footer notes: chicken portion size is hidden (biryani lines say 150 g)"
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "days": [
+        {
+          "day": "Monday",
+          "breakfast": [
+            "Dahi Bada",
+            "Aloo Dum",
+            "Ghuguni",
+            "Onion",
+            "Sev",
+            "Pudina-Lanka Chutney",
+            "Black Salt",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": ["Rice (Arua & Usuna)", "Roti", "Dal"],
+            "veg": ["Besan Curry (O)", "Sagamooga (E)"],
+            "nonVeg": ["Fish Kalia"],
+            "sideItems": ["Tomato Khajuri Khata", "Aloo Chokha with Mustard Oil"]
+          },
+          "snacks": ["Paneer Patties", "Sauce (1 pkt)", "Tea"],
+          "dinner": {
+            "common": ["Rice (Arua & Usuna)", "Roti", "Dal"],
+            "veg": ["Chhole Masala"],
+            "nonVeg": ["Egg Masala"],
+            "sideItems": ["Jeera Aloo Bhaja", "Salad"],
+            "dessert": ["Gaja"]
+          }
+        },
+        {
+          "day": "Tuesday",
+          "breakfast": [
+            "Uttapam (2 pcs) / Chakuli (3 pcs)",
+            "Ghuguni",
+            "Coconut and Groundnut Chutney",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": ["Rice (Arua & Usuna)", "Roti", "Moong Dal"],
+            "veg": ["Paneer Butter Masala"],
+            "nonVeg": ["Chicken Aloo Kasa"],
+            "sideItems": ["Karela Bhaja", "Dahi Salad"]
+          },
+          "snacks": ["Cake (Britannia)", "Fruit Juice (200 ml, Tropicana)"],
+          "dinner": {
+            "common": ["Rice (Arua & Usuna)", "Roti", "Dal"],
+            "veg": ["Soyabean Curry", "Butadali Aloo Kakharu Curry"],
+            "nonVeg": ["Egg Do Pyaza"],
+            "sideItems": ["Vendi Aloo Bhaja", "Sriram Papad"],
+            "dessert": ["Rasgola"]
+          }
+        },
+        {
+          "day": "Wednesday",
+          "breakfast": [
+            "Brown Bread (4 pcs)",
+            "Boiled Egg (1 pc) / Banana (1 pc)",
+            "Jam (2 pkt)",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": ["Rice (Arua & Usuna)", "Roti", "Dal"],
+            "veg": ["Mushroom & Green Peas Masala"],
+            "nonVeg": ["Fish Home Style"],
+            "sideItems": ["Vendi Tomato Charu", "Vegetable Chips"]
+          },
+          "snacks": ["Biscuit", "Milk (200 ml, Amul packet)"],
+          "dinner": {
+            "common": [],
+            "veg": ["Veg Dum Biryani with Kadai Paneer"],
+            "nonVeg": ["Chicken Dum Biryani (2 pcs, 150 g)"],
+            "sideItems": ["Raita", "Campa Cola / Spice Jeera"],
+            "dessert": []
+          }
+        },
+        {
+          "day": "Thursday",
+          "breakfast": [
+            "Idli (3 pcs)",
+            "Bada (2 pcs)",
+            "Ghuguni",
+            "Coconut and Groundnut Chutney",
+            "Tea"
+          ],
+          "lunch": {
+            "common": ["Rice (Arua & Usuna)", "Roti", "Dalma"],
+            "veg": ["Navaratna Khurma"],
+            "nonVeg": ["Egg Curry"],
+            "sideItems": ["Aloo Tomato Bharta", "Dahi Kadi with Pakodi"]
+          },
+          "snacks": [
+            "Papdi Chat",
+            "Sev",
+            "Dahi",
+            "Pudina Chutney",
+            "Onion",
+            "Tea"
+          ],
+          "dinner": {
+            "common": ["Rice (Arua & Usuna)", "Roti", "Dal"],
+            "veg": ["Aloo Cauliflower Masala"],
+            "nonVeg": ["Fish Masala"],
+            "sideItems": ["Veg Chips", "Salad"],
+            "dessert": ["Dalia Khiri"]
+          }
+        },
+        {
+          "day": "Friday",
+          "breakfast": [
+            "Fruit Bread (4 pcs)",
+            "Boiled Egg (1 pc) / Banana (1 pc)",
+            "Jam (2 pkt)",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": ["Veg Biryani"],
+            "veg": ["Paneer Capsicum Masala"],
+            "nonVeg": ["Chicken Mughlai"],
+            "sideItems": ["Raita", "Sriram Papad"]
+          },
+          "snacks": ["Aloo Samosa (3 pcs)", "Pudina Chutney", "Tea"],
+          "dinner": {
+            "common": ["Rice (Arua & Usuna)", "Roti", "Dal"],
+            "veg": ["Punjabi Tadka"],
+            "nonVeg": ["Egg Aloo Home Style"],
+            "sideItems": ["Chilly Soya", "Salad"],
+            "dessert": ["Gulab Jamun"]
+          }
+        },
+        {
+          "day": "Saturday",
+          "breakfast": [
+            "Vegetable Upma",
+            "Ghuguni",
+            "Coconut and Groundnut Chutney",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": ["Rice (Arua & Usuna)", "Roti", "Dal"],
+            "veg": ["Aloo Baigana Drumstick Badi Besara"],
+            "nonVeg": ["Fish Besara"],
+            "sideItems": [
+              "Dahi Bundi / Dahi Vendi / Dahi Baigana",
+              "Lujat Papad"
+            ]
+          },
+          "snacks": [
+            "Suji Kakera (with Nadia Puja) 3 pcs / Kachodi 3 pcs",
+            "Sauce (1 pkt)",
+            "Tea"
+          ],
+          "dinner": {
+            "common": ["Rice (Arua & Usuna)", "Roti", "Dal"],
+            "veg": ["Mushroom Do Pyaza (without Aloo)"],
+            "nonVeg": ["Hyderabadi Chicken"],
+            "sideItems": ["Cabbage Bhaja", "Papad"],
+            "dessert": ["Semiya Khiri"]
+          }
+        },
+        {
+          "day": "Sunday",
+          "breakfast": [
+            "Onion Masala Dosa (1 pc)",
+            "Sambar",
+            "Coconut and Groundnut Chutney",
+            "Coffee"
+          ],
+          "lunch": {
+            "common": [],
+            "veg": ["Veg Dum Biryani with 1 pc Aloo", "Paneer Hyderabadi"],
+            "nonVeg": ["Chicken Dum Biryani (2 pcs, 150 g) with 1 pc Aloo"],
+            "sideItems": ["Raita", "Sriram Papad"]
+          },
+          "snacks": ["Cream Bun / Sandwich", "Sauce (1 pkt)", "Tea"],
+          "dinner": {
+            "common": ["Rice (Arua & Usuna)", "Dal Fry"],
+            "veg": ["Veg Manchurian (6 pcs)"],
+            "nonVeg": ["Egg Manchurian (6 pcs)"],
+            "sideItems": ["Cauliflower Bhaja", "Salad"],
+            "dessert": ["Cone Ice Cream"]
+          }
+        }
+      ]
+    }
+  ]
+}

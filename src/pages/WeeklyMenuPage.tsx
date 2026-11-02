@@ -4,6 +4,7 @@ import { Calendar, ChevronLeft, Sparkles } from 'lucide-react';
 import { HostelType } from '../data/menuTypes';
 import { getHostelInfo, getDayMenu } from '../data';
 import { useCurrentDate } from '../hooks/useCurrentDate';
+import { WeekSelector } from '../components/WeekSelector';
 import { WeeklyDaySelector } from '../components/WeeklyDaySelector';
 import { MealCard } from '../components/MealCard';
 import { EmptyMenuState } from '../components/EmptyMenuState';
@@ -14,13 +15,16 @@ interface WeeklyMenuPageProps {
 
 export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) => {
   const hostel = getHostelInfo(hostelType);
-  const { dayName: currentDayName } = useCurrentDate();
+  const { dayName: currentDayName, weekOfMonth } = useCurrentDate();
   const isBoys = hostelType === 'boys';
 
-  // State for currently selected day in the weekly view (defaults to today's day of week)
+  // State for active week (Ladies has 4 weeks, Boys has 1)
+  const [selectedWeek, setSelectedWeek] = useState<number>(weekOfMonth);
+
+  // State for selected day (defaults to today's day of week)
   const [selectedDay, setSelectedDay] = useState<string>(currentDayName);
 
-  const selectedDayMenu = getDayMenu(hostelType, selectedDay);
+  const selectedDayMenu = getDayMenu(hostelType, selectedDay, selectedWeek);
 
   return (
     <div className="space-y-6">
@@ -51,7 +55,7 @@ export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) =>
               Weekly Food Menu
             </h1>
             <p className="text-xs sm:text-sm text-gray-600 mt-1">
-              Explore daily meals for the entire week at {hostel.name}.
+              Explore scheduled meals for {hostel.name} · ITER Campus-1
             </p>
           </div>
 
@@ -64,6 +68,17 @@ export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) =>
           </div>
         </div>
       </section>
+
+      {/* Week Selector for Ladies Hostel (Month has 4 rotating weeks) */}
+      {!isBoys && (
+        <WeekSelector
+          selectedWeek={selectedWeek}
+          onSelectWeek={setSelectedWeek}
+          currentCalendarWeek={weekOfMonth}
+          hostelType={hostelType}
+          totalWeeks={hostel.totalWeeks}
+        />
+      )}
 
       {/* 7-Day Interactive Selector */}
       <WeeklyDaySelector
@@ -80,6 +95,11 @@ export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) =>
             <h2 className="font-heading text-lg sm:text-xl font-bold text-gray-900 tracking-tight">
               {selectedDay}'s Menu
             </h2>
+            {!isBoys && (
+              <span className="text-[11px] font-bold text-pink-700 bg-pink-50 px-2 py-0.5 rounded-md border border-pink-100">
+                Week {selectedWeek}
+              </span>
+            )}
             {selectedDay.toLowerCase() === currentDayName.toLowerCase() && (
               <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800">
                 Today
@@ -87,7 +107,7 @@ export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) =>
             )}
           </div>
           <p className="text-xs text-gray-500">
-            {selectedDayMenu?.meals.length || 0} scheduled meals
+            {selectedDayMenu?.meals.length || 0} scheduled meals (Breakfast, Lunch, Snacks, Dinner)
           </p>
         </div>
 

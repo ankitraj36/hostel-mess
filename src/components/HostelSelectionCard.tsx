@@ -83,14 +83,19 @@ export const HostelSelectionCard: React.FC<HostelSelectionCardProps> = ({
           </p>
         </div>
 
-        {/* Timings Quick Tag */}
+        {/* Timings & Rotation Quick Tag */}
         <div
-          className={`flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-lg mb-5 ${
+          className={`flex items-center justify-between text-xs font-semibold px-3 py-2 rounded-lg mb-5 ${
             isBoys ? 'bg-blue-100/70 text-blue-800' : 'bg-pink-100/70 text-pink-800'
           }`}
         >
-          <Clock className="w-3.5 h-3.5 shrink-0" />
-          <span className="truncate">Breakfast, Lunch, Snacks & Dinner served daily</span>
+          <div className="flex items-center gap-1.5 truncate">
+            <Clock className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">4 Meals Daily (7:30 AM – 9:00 PM)</span>
+          </div>
+          <span className="text-[10px] uppercase font-bold tracking-wider shrink-0 ml-2 px-1.5 py-0.5 rounded bg-white/70">
+            {isBoys ? 'Weekly Rotation' : '4-Week Monthly'}
+          </span>
         </div>
 
         {/* CTA Button */}
@@ -108,3 +113,4 @@ export const HostelSelectionCard: React.FC<HostelSelectionCardProps> = ({
     </Link>
   );
 };
+

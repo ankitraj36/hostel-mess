@@ -40,10 +40,10 @@ export const AboutPage: React.FC = () => {
         {/* Purpose Card */}
         <section className="bg-gray-50/80 rounded-2xl p-5 sm:p-6 border border-gray-200/80 mb-8">
           <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
-            <span className="font-bold text-gray-900">HOSTEL MESS</span> was built specifically for college hostel students to eliminate the daily guesswork of mess food. Designed with a mobile-first philosophy, students can open the web app, select their residence, and view what's being served within seconds.
+            <span className="font-bold text-gray-900">HOSTEL MESS</span> was built specifically for students of <strong>ITER, Siksha 'O' Anusandhan (Deemed to be University), Bhubaneswar</strong> to eliminate the daily guesswork of mess food. Designed with a mobile-first philosophy, students can open the web app, select their residence, and view what's being served within seconds.
           </p>
           <p className="text-sm text-gray-600 leading-relaxed">
-            With separate, tailored dining portals for <strong>Boys Hostel (Blue Theme)</strong> and <strong>Girls Hostel (Pink Theme)</strong>, the platform ensures every student stays informed regarding meal times, live dining statuses, and weekly specials.
+            With separate, tailored dining portals for <strong>ITER Boys' Hostel (Blue Theme · Weekly Rotation)</strong> and <strong>ITER Ladies' Hostel (Pink Theme · 4-Week Monthly Rotation)</strong>, the platform ensures every student stays informed regarding meal times, live dining statuses, veg & non-veg options, and dessert specials.
           </p>
         </section>
 
@@ -68,9 +68,9 @@ export const AboutPage: React.FC = () => {
               <div className="w-8 h-8 rounded-lg bg-pink-50 text-pink-600 flex items-center justify-center mb-2.5">
                 <Calendar className="w-4 h-4" />
               </div>
-              <h3 className="text-sm font-bold text-gray-900">Explore Weekly Menus</h3>
+              <h3 className="text-sm font-bold text-gray-900">Monthly 4-Week & Weekly Cycles</h3>
               <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-                Browse through the 7-day culinary calendar to anticipate mid-week feasts and Sunday brunches.
+                Seamlessly browse across Week 1, 2, 3, and 4 for Ladies Hostel, and weekly schedules for Boys Hostel.
               </p>
             </div>
 
@@ -88,9 +88,9 @@ export const AboutPage: React.FC = () => {
               <div className="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center mb-2.5">
                 <ChefHat className="w-4 h-4" />
               </div>
-              <h3 className="text-sm font-bold text-gray-900">100% Pure Vegetarian</h3>
+              <h3 className="text-sm font-bold text-gray-900">Veg & Non-Veg Offerings</h3>
               <p className="text-xs text-gray-600 mt-1 leading-relaxed">
-                All food items are prepared under campus food safety standards with balanced nutrition.
+                Daily common staples (Usuna & Arua rice), choice of fish, chicken, egg, paneer, and sweets.
               </p>
             </div>
           </div>

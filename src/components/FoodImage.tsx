@@ -86,3 +86,4 @@ export const FoodImage: React.FC<FoodImageProps> = ({
     </div>
   );
 };
+

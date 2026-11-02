@@ -123,3 +123,4 @@ export const BottomNavigation: React.FC<BottomNavigationProps> = ({ currentHoste
     </nav>
   );
 };
+

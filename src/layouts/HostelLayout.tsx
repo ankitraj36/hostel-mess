@@ -46,3 +46,4 @@ export const HostelLayout: React.FC<HostelLayoutProps> = ({ hostelType, children
     </div>
   );
 };
+

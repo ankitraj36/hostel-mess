@@ -8,11 +8,17 @@ export interface Meal {
   name: string;
   startTime: string;
   endTime: string;
-  startMinutes: number; // minutes from midnight (e.g. 7:30 AM = 7 * 60 + 30 = 450)
-  endMinutes: number;   // minutes from midnight (e.g. 9:00 AM = 9 * 60 = 540)
-  items: string[];
+  startMinutes: number; // minutes from midnight (e.g. 7:30 AM = 450)
+  endMinutes: number;   // minutes from midnight (e.g. 9:00 AM = 540)
+  items: string[];      // flattened list of all items for summary / search
+  commonItems?: string[];
+  vegOptions?: string[];
+  nonVegOptions?: string[];
+  sideItems?: string[];
+  desserts?: string[];
   image: string;
   vegetarian?: boolean;
+  hasNonVegOption?: boolean;
   specialNote?: string;
   nutritionTag?: string;
 }
@@ -24,6 +30,12 @@ export interface DailyMenu {
   isSpecialDay?: boolean;
   specialTheme?: string;
   meals: Meal[];
+}
+
+export interface WeekMenu {
+  weekNumber: number; // 1, 2, 3, 4
+  weekLabel: string;  // "Week 1", "Week 2", "Week 3", "Week 4"
+  days: DailyMenu[];
 }
 
 export interface HostelInfo {
@@ -38,5 +50,12 @@ export interface HostelInfo {
   diningHall: string;
   capacity: string;
   timingNotice: string;
+  institution: string;
+  campus: string;
+  rotationType: 'weekly' | 'monthly_4_weeks';
+  totalWeeks: number; // 1 for boys, 4 for girls
+  notices?: string[];
+  brandsAndPortions?: Record<string, string | null>;
+  weeks: WeekMenu[];
   weeklyMenu: DailyMenu[];
 }

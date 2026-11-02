@@ -86,3 +86,4 @@ export const MenuSkeletonList: React.FC = () => {
     </div>
   );
 };
+

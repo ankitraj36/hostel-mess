@@ -6,10 +6,11 @@ import { FoodImage } from './FoodImage';
 
 interface NextMealCardProps {
   hostelType: HostelType;
+  weekNumber?: number;
 }
 
-export const NextMealCard: React.FC<NextMealCardProps> = ({ hostelType }) => {
-  const { meal, isCurrentlyServing, isTomorrow, timeNote, targetDayName } = useNextMeal(hostelType);
+export const NextMealCard: React.FC<NextMealCardProps> = ({ hostelType, weekNumber }) => {
+  const { meal, isCurrentlyServing, isTomorrow, timeNote, targetDayName } = useNextMeal(hostelType, weekNumber);
   const isBoys = hostelType === 'boys';
 
   if (!meal) {
@@ -81,7 +82,7 @@ export const NextMealCard: React.FC<NextMealCardProps> = ({ hostelType }) => {
       {/* Main Content Area */}
       <div className="flex items-center gap-3.5 sm:gap-4">
         {/* Compact Food Thumbnail */}
-        <div className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 rounded-xl overflow-hidden shadow-xs">
+        <div className="w-20 h-20 sm:w-24 sm:h-24 shrink-0 rounded-xl overflow-hidden shadow-xs relative">
           <FoodImage
             src={meal.image}
             alt={meal.name}
@@ -92,7 +93,7 @@ export const NextMealCard: React.FC<NextMealCardProps> = ({ hostelType }) => {
 
         {/* Text Details */}
         <div className="flex-1 min-w-0">
-          <div className="flex items-baseline gap-2 mb-1">
+          <div className="flex items-baseline gap-2 mb-1 flex-wrap">
             <h4 className="font-heading text-lg sm:text-xl font-bold text-gray-900 capitalize">
               {meal.name}
             </h4>
@@ -101,11 +102,25 @@ export const NextMealCard: React.FC<NextMealCardProps> = ({ hostelType }) => {
             </span>
           </div>
 
-          <p className="text-xs sm:text-sm text-gray-700 line-clamp-2 leading-relaxed">
-            <span className="font-medium text-gray-900">Featured items: </span>
-            {meal.items.slice(0, 4).join(', ')}
-            {meal.items.length > 4 ? ` and +${meal.items.length - 4} more` : ''}
-          </p>
+          {/* Quick Item Summary */}
+          {meal.vegOptions && meal.vegOptions.length > 0 ? (
+            <div className="text-xs space-y-0.5 text-gray-700">
+              <p className="truncate">
+                <span className="font-bold text-emerald-700">Veg:</span> {meal.vegOptions.join(', ')}
+              </p>
+              {meal.nonVegOptions && meal.nonVegOptions.length > 0 && (
+                <p className="truncate">
+                  <span className="font-bold text-rose-700">Non-Veg:</span> {meal.nonVegOptions.join(', ')}
+                </p>
+              )}
+            </div>
+          ) : (
+            <p className="text-xs sm:text-sm text-gray-700 line-clamp-2 leading-relaxed">
+              <span className="font-medium text-gray-900">Featured items: </span>
+              {meal.items.slice(0, 4).join(', ')}
+              {meal.items.length > 4 ? ` and +${meal.items.length - 4} more` : ''}
+            </p>
+          )}
 
           {meal.specialNote && (
             <p

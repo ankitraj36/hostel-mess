@@ -1,24 +1,32 @@
 # HOSTEL MESS — Premium Mobile-First Hostel Food Menu Website
 
-> **Good Food. Every Day.**
+> **Good Food. Every Day.**  
+> Official Mess Menu System for **ITER, Siksha 'O' Anusandhan (Deemed to be University), Bhubaneswar, Odisha**.
 
-A complete, responsive, mobile-first web application designed for college hostel students to quickly access their daily meal menus, live serving statuses, and weekly dining schedules.
+A responsive, mobile-first web application designed for college hostel students to quickly access their daily meal menus, live serving statuses, and weekly dining schedules.
 
 ---
 
-## ✨ Features
+## ✨ Features & Menu Rotations
 
-- **Distinct Hostel Portals**:
-  - **Boys Hostel**: Royal Blue theme (`#2563EB`) with Block A & B Hall 1 menus.
-  - **Girls Hostel**: Rose Pink theme (`#DB2777`) with Block C & D Hall 2 menus.
+- **Distinct Hostel Portals & Rotations**:
+  - **Boys Hostel (Blue Theme · `#2563EB`)**:
+    - **Single Repeating Weekly Schedule**: Follows official ITER notice board schedule (repeats weekly).
+    - Features Usuna & Arua rice options, daily Dal, Dalma, Besara, Fish Kalia, Chicken Aloo Kasa, Egg Masala, snacks, and sweet desserts (Gaja, Rasgulla, Gulab Jamun).
+    - Campus-1 Dining Hall guidelines and portion size standards.
+  - **Ladies Hostel (Pink Theme · `#DB2777`)**:
+    - **4-Week Monthly Cycle**: Has 4 distinct rotating weekly menus across each month (Week 1, Week 2, Week 3, Week 4).
+    - Interactive **Week Selector** allowing residents to switch between all 4 weeks, with automatic detection and highlighting of the current calendar week.
   - **Neutral Homepage**: Clean, distraction-free residence selection.
+- **Categorized Meal Presentations**:
+  - Separates **Common Staples** (Rice Arua & Usuna, Roti, Dal), **Veg Options**, **Non-Veg Options** (Egg, Fish, Chicken), **Sides**, and **Desserts** with clear dietary badges.
 - **Dynamic Live Next Meal Engine**:
   - Automatically calculates active or upcoming meals based on current local time:
     - **Breakfast**: 7:30 AM – 9:00 AM
     - **Lunch**: 12:30 PM – 2:00 PM
     - **Evening Snacks**: 4:30 PM – 5:30 PM
     - **Dinner**: 7:30 PM – 9:00 PM
-  - Features real-time badges: `SERVING NOW` (with live pulse indicator), `UP NEXT` (with countdown), and `TOMORROW MORNING` (after dinner window).
+  - Features real-time badges: `SERVING NOW` (with pulsing beacon), `UP NEXT` (with countdown), and `TOMORROW MORNING` (after dinner window).
 - **Interactive 7-Day Weekly Food Schedule**:
   - Touch-friendly horizontal day selector (Monday through Sunday).
   - Defaults to current day with immediate day-switching and zero page reloads.
@@ -26,10 +34,7 @@ A complete, responsive, mobile-first web application designed for college hostel
   - Horizontal meal cards on mobile (dish imagery on left, menu items & timing on right).
   - Balanced 2-column grid expansion on tablets & desktop screens.
   - Fixed bottom navigation bar with 48px minimum touch targets and iOS safe-area support.
-  - Desktop header navigation with automatic bottom-bar hiding.
   - Smart image loader with graceful pure CSS/SVG fallbacks for zero broken image states.
-- **100% Pure Vegetarian Certified Campus Diet**:
-  - Balanced nutrition tags, authentic Indian menu compositions, and chef specials.
 
 ---
 
@@ -46,15 +51,15 @@ A complete, responsive, mobile-first web application designed for college hostel
 
 ## 🗺️ Application Routes
 
-| Route | Page / Function |
-|---|---|
-| `/` | Homepage — Hostel Residence Selection |
-| `/boys` | Boys Hostel Today's Menu Dashboard (Blue Theme) |
-| `/boys/weekly` | Boys Hostel 7-Day Weekly Schedule (Blue Theme) |
-| `/girls` | Girls Hostel Today's Menu Dashboard (Pink Theme) |
-| `/girls/weekly` | Girls Hostel 7-Day Weekly Schedule (Pink Theme) |
-| `/about` | About Hostel Mess & Dining Information |
-| `*` | 404 Fallback Page |
+| Route | Page / Function | Rotation Model |
+|---|---|---|
+| `/` | Homepage — Hostel Residence Selection | Neutral |
+| `/boys` | Boys Hostel Today's Menu Dashboard (Blue Theme) | 1-Week Rotating |
+| `/boys/weekly` | Boys Hostel 7-Day Weekly Schedule (Blue Theme) | 1-Week Rotating |
+| `/girls` | Ladies Hostel Today's Menu Dashboard (Pink Theme) | 4-Week Monthly Cycle |
+| `/girls/weekly` | Ladies Hostel 7-Day Weekly Schedule (Pink Theme) | 4-Week Monthly Cycle |
+| `/about` | About Hostel Mess & Dining Information | Neutral |
+| `*` | 404 Fallback Page | Neutral |
 
 ---
 
@@ -77,84 +82,10 @@ npm install
 npm run dev
 ```
 
-The application will be live at `http://localhost:5173/`.
+The application is live at `http://localhost:5173/`.
 
 ### Production Build
 ```bash
 npm run build
 npm run preview
-```
-
----
-
-## 📂 Project Architecture
-
-```text
-src/
-├── components/
-│   ├── BottomNavigation.tsx      # Fixed mobile bottom bar (Home, Today, Weekly, About)
-│   ├── EmptyMenuState.tsx        # Menu unpublished & skeleton loading states
-│   ├── FoodImage.tsx             # Responsive image with error fallback & pulse skeleton
-│   ├── Header.tsx                # Compact university header with hostel pill
-│   ├── HostelSelectionCard.tsx   # Interactive selection cards for homepage
-│   ├── MealCard.tsx              # Mobile horizontal meal card with dietary badges
-│   ├── NextMealCard.tsx          # Dynamic live "Up Next" / "Serving Now" engine
-│   └── WeeklyDaySelector.tsx     # 7-day horizontal scroll selector
-├── data/
-│   ├── boysMenu.ts               # Structured 7-day schedule for Boys Hostel
-│   ├── girlsMenu.ts              # Structured 7-day schedule for Girls Hostel
-│   ├── index.ts                  # Central menu repository and lookup utilities
-│   └── menuTypes.ts              # TypeScript interfaces (Meal, DailyMenu, HostelInfo)
-├── hooks/
-│   ├── useCurrentDate.ts         # Real-time dynamic date, greeting, and formatted strings
-│   └── useNextMeal.ts            # Local-time based schedule calculator
-├── layouts/
-│   └── HostelLayout.tsx          # Theme injector (.boys-theme / .girls-theme) and wrapper
-├── pages/
-│   ├── AboutPage.tsx             # Campus mess platform info & dining timings
-│   ├── HomePage.tsx              # Neutral white hostel selection entry
-│   ├── HostelDashboard.tsx       # Today's menu dashboard (Boys / Girls)
-│   ├── NotFoundPage.tsx          # 404 fallback
-│   └── WeeklyMenuPage.tsx        # 7-day weekly schedule with interactive day tab
-├── styles/
-│   └── themes.css                # CSS variables, design tokens, safe-area utilities
-├── App.tsx                       # React Router configuration
-├── main.tsx                      # App entry point
-└── vite-env.d.ts                 # Vite type declarations
-```
-
----
-
-## 🎨 Design Tokens
-
-```css
-:root {
-  --background: #FFFFFF;
-  --foreground: #111827;
-  --muted: #6B7280;
-  --border: #E5E7EB;
-  --surface: #F8FAFC;
-}
-
-.boys-theme {
-  --primary: #2563EB;
-  --primary-hover: #1D4ED8;
-  --accent: #DBEAFE;
-  --background: #F8FAFC;
-  --card: #FFFFFF;
-  --foreground: #1E293B;
-  --muted: #64748B;
-  --border: #DBEAFE;
-}
-
-.girls-theme {
-  --primary: #DB2777;
-  --primary-hover: #BE185D;
-  --accent: #FCE7F3;
-  --background: #FFF7FA;
-  --card: #FFFFFF;
-  --foreground: #831843;
-  --muted: #9D174D;
-  --border: #FBCFE8;
-}
 ```
