@@ -43,7 +43,7 @@ export const HostelLayout: React.FC<HostelLayoutProps> = ({ hostelType, children
       </main>
 
       {/* Campus Footer with Legal & Cookie Links */}
-      <Footer className={isBoys ? 'bg-blue-50/40' : isGirls ? 'bg-pink-50/40' : ''} />
+      <Footer hostelType={hostelType} className={isBoys ? 'bg-blue-50/40' : isGirls ? 'bg-pink-50/40' : ''} />
 
       {/* Fixed Mobile Bottom Navigation */}
       <BottomNavigation currentHostel={hostelType} />
