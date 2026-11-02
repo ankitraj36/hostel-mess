@@ -57,7 +57,7 @@ export const WeekSelector: React.FC<WeekSelectorProps> = ({
               role="tab"
               aria-selected={isSelected}
               onClick={() => onSelectWeek(weekNum)}
-              className={`py-2 px-2 rounded-xl text-center transition-all duration-200 cursor-pointer select-none border focus-visible:outline-none focus-visible:ring-2 ${
+              className={`min-h-[44px] py-2 px-2 rounded-xl text-center transition-all duration-200 cursor-pointer select-none border focus-visible:outline-none focus-visible:ring-2 ${
                 isSelected
                   ? 'bg-pink-600 text-white border-pink-600 shadow-md shadow-pink-500/20 font-bold'
                   : 'bg-gray-50/80 text-gray-700 border-gray-100 hover:bg-pink-50/50 hover:border-pink-200 font-medium active:scale-95'

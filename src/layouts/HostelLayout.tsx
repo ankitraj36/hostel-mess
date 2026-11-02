@@ -33,17 +33,16 @@ export const HostelLayout: React.FC<HostelLayoutProps> = ({ hostelType, children
           : 'bg-white'
       }`}
     >
-      {/* Universal Header */}
+      {/* Universal Sticky Header */}
       <Header hostelType={hostelType} />
 
-      {/* Main Content Area */}
-      <main className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-6 pb-24 md:pb-12">
+      {/* Main Content Area - Generous bottom padding to ensure zero bottom-bar overlap */}
+      <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-7 pb-32 sm:pb-28 md:pb-14">
         {children || <Outlet />}
       </main>
 
-      {/* Universal Mobile Bottom Navigation */}
+      {/* Fixed Mobile Bottom Navigation */}
       <BottomNavigation currentHostel={hostelType} />
     </div>
   );
 };
-

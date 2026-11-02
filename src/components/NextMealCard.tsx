@@ -18,11 +18,12 @@ export const NextMealCard: React.FC<NextMealCardProps> = ({ hostelType, weekNumb
   }
 
   return (
-    <div
+    <aside
+      aria-label="Upcoming or active scheduled meal"
       className={`relative overflow-hidden rounded-2xl border transition-all duration-300 p-4 sm:p-5 mb-6 ${
         isBoys
-          ? 'bg-gradient-to-br from-blue-50/90 via-white to-blue-50/40 border-blue-200/90 shadow-sm'
-          : 'bg-gradient-to-br from-pink-50/90 via-white to-pink-50/40 border-pink-200/90 shadow-sm'
+          ? 'bg-gradient-to-br from-blue-50/95 via-white to-blue-50/40 border-blue-200/90 shadow-xs'
+          : 'bg-gradient-to-br from-pink-50/95 via-white to-pink-50/40 border-pink-200/90 shadow-xs'
       }`}
     >
       {/* Top Banner Row */}
@@ -57,24 +58,24 @@ export const NextMealCard: React.FC<NextMealCardProps> = ({ hostelType, weekNumb
 
           <span
             className={`text-xs font-semibold ${
-              isBoys ? 'text-blue-900/70' : 'text-pink-900/70'
+              isBoys ? 'text-blue-900/80' : 'text-pink-900/80'
             }`}
           >
             {targetDayName}
           </span>
         </div>
 
-        {/* Dynamic Countdown / Time Note */}
+        {/* Dynamic Countdown / Status Pill */}
         <div
-          className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-full ${
+          className={`inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold px-2.5 py-0.5 rounded-full ${
             isCurrentlyServing
-              ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+              ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
               : isBoys
-              ? 'bg-blue-100/60 text-blue-800'
-              : 'bg-pink-100/60 text-pink-800'
+              ? 'bg-blue-100/70 text-blue-900'
+              : 'bg-pink-100/70 text-pink-900'
           }`}
         >
-          <Clock className="w-3.5 h-3.5" />
+          <Clock className="w-3 h-3" />
           <span>{timeNote}</span>
         </div>
       </div>
@@ -102,7 +103,7 @@ export const NextMealCard: React.FC<NextMealCardProps> = ({ hostelType, weekNumb
             </span>
           </div>
 
-          {/* Quick Item Summary */}
+          {/* Quick Summary Preview */}
           {meal.vegOptions && meal.vegOptions.length > 0 ? (
             <div className="text-xs space-y-0.5 text-gray-700">
               <p className="truncate">
@@ -133,6 +134,6 @@ export const NextMealCard: React.FC<NextMealCardProps> = ({ hostelType, weekNumb
           )}
         </div>
       </div>
-    </div>
+    </aside>
   );
 };

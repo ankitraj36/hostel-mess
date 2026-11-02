@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, ChevronRight, Info, Building2 } from 'lucide-react';
+import { Calendar, ChevronRight, Info, Building2, Drumstick, Leaf } from 'lucide-react';
 import { HostelType } from '../data/menuTypes';
 import { getHostelInfo, getTodayMenu } from '../data';
 import { useCurrentDate } from '../hooks/useCurrentDate';
@@ -13,6 +13,8 @@ interface HostelDashboardProps {
   hostelType: HostelType;
 }
 
+type MealFilter = 'all' | 'veg' | 'non-veg';
+
 export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) => {
   const hostel = getHostelInfo(hostelType);
   const { greeting, formattedDate, date, weekOfMonth } = useCurrentDate();
@@ -20,9 +22,17 @@ export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) 
 
   // For Ladies Hostel, support switching between 4 weeks (defaults to current calendar week)
   const [selectedWeek, setSelectedWeek] = useState<number>(weekOfMonth);
+  const [filter, setFilter] = useState<MealFilter>('all');
 
   // Today's menu for the selected week
   const todayMenu = getTodayMenu(hostelType, date, selectedWeek);
+
+  // Filter meals if student selects Veg or Non-Veg focus
+  const filteredMeals = todayMenu?.meals.filter((m) => {
+    if (filter === 'veg') return m.vegetarian || (m.vegOptions && m.vegOptions.length > 0);
+    if (filter === 'non-veg') return m.hasNonVegOption;
+    return true;
+  });
 
   return (
     <div className="space-y-6">
@@ -40,8 +50,8 @@ export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) 
                 {hostel.residenceLabel}
               </span>
               <span className="text-xs text-gray-500 font-medium flex items-center gap-1">
-                <Building2 className="w-3.5 h-3.5" />
-                <span>ITER Campus-1</span>
+                <Building2 className="w-3.5 h-3.5 text-gray-400" />
+                <span>ITER Campus-1 Dining</span>
               </span>
             </div>
 
@@ -56,7 +66,7 @@ export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) 
 
           {/* Dynamic Date & Active Week Badge */}
           <div
-            className={`self-start sm:self-auto px-3.5 py-2 rounded-xl text-left sm:text-right border ${
+            className={`self-start sm:self-auto px-3.5 py-2.5 rounded-xl text-left sm:text-right border ${
               isBoys
                 ? 'bg-blue-50/70 border-blue-100 text-blue-900'
                 : 'bg-pink-50/70 border-pink-100 text-pink-900'
@@ -91,7 +101,7 @@ export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) 
 
       {/* Today's Meals Section */}
       <section aria-labelledby="todays-menu-heading">
-        <div className="flex items-center justify-between mb-4 px-1">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 px-1">
           <div>
             <div className="flex items-center gap-2">
               <h2 id="todays-menu-heading" className="font-heading text-lg sm:text-xl font-bold text-gray-900 tracking-tight">
@@ -103,28 +113,70 @@ export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) 
                 </span>
               )}
             </div>
-            <p className="text-xs text-gray-500">
-              Fresh meals served with Usuna & Arua rice options
+            <p className="text-xs text-gray-500 mt-0.5">
+              4 daily meals with Usuna & Arua rice options
             </p>
           </div>
 
-          <Link
-            to={`/${hostelType}/weekly`}
-            className={`inline-flex items-center gap-1 text-xs font-semibold px-3 py-1.5 rounded-lg transition-all ${
-              isBoys
-                ? 'text-blue-700 bg-blue-50 hover:bg-blue-100'
-                : 'text-pink-700 bg-pink-50 hover:bg-pink-100'
-            }`}
-          >
-            <span>Weekly Schedule</span>
-            <ChevronRight className="w-3.5 h-3.5" />
-          </Link>
+          {/* Right Action: Dietary Filter Pills & Weekly Schedule Shortcut */}
+          <div className="flex items-center gap-2 flex-wrap">
+            {/* Filter Toggle */}
+            <div className="inline-flex bg-gray-100 p-0.5 rounded-lg border border-gray-200 text-xs font-semibold">
+              <button
+                type="button"
+                onClick={() => setFilter('all')}
+                className={`px-2.5 py-1 rounded-md transition-all ${
+                  filter === 'all'
+                    ? 'bg-white text-gray-900 shadow-2xs font-bold'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                All
+              </button>
+              <button
+                type="button"
+                onClick={() => setFilter('veg')}
+                className={`px-2.5 py-1 rounded-md flex items-center gap-1 transition-all ${
+                  filter === 'veg'
+                    ? 'bg-white text-emerald-700 shadow-2xs font-bold'
+                    : 'text-gray-600 hover:text-emerald-700'
+                }`}
+              >
+                <Leaf className="w-3 h-3 text-emerald-600" />
+                <span>Veg</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setFilter('non-veg')}
+                className={`px-2.5 py-1 rounded-md flex items-center gap-1 transition-all ${
+                  filter === 'non-veg'
+                    ? 'bg-white text-rose-700 shadow-2xs font-bold'
+                    : 'text-gray-600 hover:text-rose-700'
+                }`}
+              >
+                <Drumstick className="w-3 h-3 text-rose-600" />
+                <span>Non-Veg</span>
+              </button>
+            </div>
+
+            <Link
+              to={`/${hostelType}/weekly`}
+              className={`inline-flex items-center gap-1 text-xs font-bold px-3 py-1.5 rounded-lg transition-all min-h-[34px] ${
+                isBoys
+                  ? 'text-blue-700 bg-blue-50 hover:bg-blue-100'
+                  : 'text-pink-700 bg-pink-50 hover:bg-pink-100'
+              }`}
+            >
+              <span>Weekly</span>
+              <ChevronRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
         </div>
 
         {/* Meal Cards Display */}
-        {todayMenu && todayMenu.meals.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {todayMenu.meals.map((meal) => (
+        {filteredMeals && filteredMeals.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+            {filteredMeals.map((meal) => (
               <MealCard
                 key={meal.id}
                 meal={meal}
@@ -133,24 +185,28 @@ export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) 
             ))}
           </div>
         ) : (
-          <EmptyMenuState hostelType={hostelType} />
+          <EmptyMenuState
+            hostelType={hostelType}
+            title={filter !== 'all' ? `No ${filter} meals scheduled` : undefined}
+            description={filter !== 'all' ? `Try switching back to "All" to view the full meal plan.` : undefined}
+          />
         )}
       </section>
 
       {/* Notice & Brand Guidelines Box */}
       {hostel.notices && hostel.notices.length > 0 && (
         <section
-          className={`p-4 rounded-xl border text-xs sm:text-sm ${
+          className={`p-4 sm:p-5 rounded-2xl border text-xs sm:text-sm ${
             isBoys
-              ? 'bg-blue-50/50 border-blue-100 text-blue-900'
-              : 'bg-pink-50/50 border-pink-100 text-pink-900'
+              ? 'bg-blue-50/60 border-blue-100 text-blue-950'
+              : 'bg-pink-50/60 border-pink-100 text-pink-950'
           }`}
         >
           <div className="flex items-center gap-2 font-bold mb-2">
             <Info className="w-4 h-4 shrink-0" />
             <span>Official Mess Guidelines & Quality Standards</span>
           </div>
-          <ul className="space-y-1.5 text-xs opacity-90 pl-5 list-disc">
+          <ul className="space-y-1.5 text-xs opacity-90 pl-5 list-disc leading-relaxed">
             {hostel.notices.map((notice, idx) => (
               <li key={idx}>{notice}</li>
             ))}

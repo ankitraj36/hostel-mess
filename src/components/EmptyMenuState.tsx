@@ -13,7 +13,7 @@ interface EmptyMenuStateProps {
 export const EmptyMenuState: React.FC<EmptyMenuStateProps> = ({
   hostelType = 'boys',
   title = 'Menu Not Updated Yet',
-  description = "The food menu for this day hasn't been published.",
+  description = 'Please check back later for the latest menu.',
   onRetry,
 }) => {
   const isBoys = hostelType === 'boys';

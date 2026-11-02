@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, ChevronLeft, Sparkles } from 'lucide-react';
+import { Calendar, ChevronLeft, Sparkles, Leaf, Drumstick } from 'lucide-react';
 import { HostelType } from '../data/menuTypes';
 import { getHostelInfo, getDayMenu } from '../data';
 import { useCurrentDate } from '../hooks/useCurrentDate';
@@ -13,6 +13,8 @@ interface WeeklyMenuPageProps {
   hostelType: HostelType;
 }
 
+type MealFilter = 'all' | 'veg' | 'non-veg';
+
 export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) => {
   const hostel = getHostelInfo(hostelType);
   const { dayName: currentDayName, weekOfMonth } = useCurrentDate();
@@ -23,8 +25,16 @@ export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) =>
 
   // State for selected day (defaults to today's day of week)
   const [selectedDay, setSelectedDay] = useState<string>(currentDayName);
+  const [filter, setFilter] = useState<MealFilter>('all');
 
   const selectedDayMenu = getDayMenu(hostelType, selectedDay, selectedWeek);
+
+  // Filter meals if student selects Veg or Non-Veg focus
+  const filteredMeals = selectedDayMenu?.meals.filter((m) => {
+    if (filter === 'veg') return m.vegetarian || (m.vegOptions && m.vegOptions.length > 0);
+    if (filter === 'non-veg') return m.hasNonVegOption;
+    return true;
+  });
 
   return (
     <div className="space-y-6">
@@ -88,8 +98,8 @@ export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) =>
         currentDayName={currentDayName}
       />
 
-      {/* Selected Day Header & Highlights */}
-      <div className="flex items-center justify-between px-1">
+      {/* Selected Day Header & Dietary Filter */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 px-1">
         <div>
           <div className="flex items-center gap-2">
             <h2 className="font-heading text-lg sm:text-xl font-bold text-gray-900 tracking-tight">
@@ -111,22 +121,63 @@ export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) =>
           </p>
         </div>
 
-        {selectedDayMenu?.specialTheme && (
-          <div
-            className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${
-              isBoys ? 'bg-blue-50 text-blue-700 border border-blue-200' : 'bg-pink-50 text-pink-700 border border-pink-200'
-            }`}
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{selectedDayMenu.specialTheme}</span>
+        <div className="flex items-center gap-2 flex-wrap">
+          {selectedDayMenu?.specialTheme && (
+            <div
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold ${
+                isBoys ? 'bg-blue-50 text-blue-700 border border-blue-200' : 'bg-pink-50 text-pink-700 border border-pink-200'
+              }`}
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{selectedDayMenu.specialTheme}</span>
+            </div>
+          )}
+
+          {/* Filter Toggle */}
+          <div className="inline-flex bg-gray-100 p-0.5 rounded-lg border border-gray-200 text-xs font-semibold">
+            <button
+              type="button"
+              onClick={() => setFilter('all')}
+              className={`px-2.5 py-1 rounded-md transition-all ${
+                filter === 'all'
+                  ? 'bg-white text-gray-900 shadow-2xs font-bold'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              All
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('veg')}
+              className={`px-2.5 py-1 rounded-md flex items-center gap-1 transition-all ${
+                filter === 'veg'
+                  ? 'bg-white text-emerald-700 shadow-2xs font-bold'
+                  : 'text-gray-600 hover:text-emerald-700'
+              }`}
+            >
+              <Leaf className="w-3 h-3 text-emerald-600" />
+              <span>Veg</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilter('non-veg')}
+              className={`px-2.5 py-1 rounded-md flex items-center gap-1 transition-all ${
+                filter === 'non-veg'
+                  ? 'bg-white text-rose-700 shadow-2xs font-bold'
+                  : 'text-gray-600 hover:text-rose-700'
+              }`}
+            >
+              <Drumstick className="w-3 h-3 text-rose-600" />
+              <span>Non-Veg</span>
+            </button>
           </div>
-        )}
+        </div>
       </div>
 
       {/* Display Meals for the Selected Day */}
-      {selectedDayMenu && selectedDayMenu.meals.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {selectedDayMenu.meals.map((meal) => (
+      {filteredMeals && filteredMeals.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-5">
+          {filteredMeals.map((meal) => (
             <MealCard
               key={meal.id}
               meal={meal}
@@ -137,8 +188,8 @@ export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) =>
       ) : (
         <EmptyMenuState
           hostelType={hostelType}
-          title={`No Menu for ${selectedDay}`}
-          description="The mess schedule for this day is currently being refreshed by the administration."
+          title={`No meals found`}
+          description="Try switching the filter to view all scheduled meals."
         />
       )}
 
@@ -146,10 +197,10 @@ export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) =>
       <div className="flex items-center justify-center pt-4">
         <Link
           to={`/${hostelType}`}
-          className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+          className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-xs ${
             isBoys
-              ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-xs'
-              : 'bg-pink-600 hover:bg-pink-700 text-white shadow-xs'
+              ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-blue-500/20'
+              : 'bg-pink-600 hover:bg-pink-700 text-white shadow-pink-500/20'
           }`}
         >
           <Calendar className="w-4 h-4" />

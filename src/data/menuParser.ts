@@ -270,3 +270,4 @@ export const girlsHostelInfo: HostelInfo = {
   weeks: ladiesWeeksData,
   weeklyMenu: ladiesWeeksData[0]?.days || [],
 };
+

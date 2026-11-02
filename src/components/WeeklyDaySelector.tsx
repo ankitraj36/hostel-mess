@@ -27,7 +27,7 @@ export const WeeklyDaySelector: React.FC<WeeklyDaySelectorProps> = ({
   const isBoys = hostelType === 'boys';
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Scroll active day into view on mobile
+  // Automatically scroll active day into view on mobile
   useEffect(() => {
     if (scrollContainerRef.current) {
       const activeBtn = scrollContainerRef.current.querySelector('[data-active="true"]');
@@ -47,14 +47,15 @@ export const WeeklyDaySelector: React.FC<WeeklyDaySelectorProps> = ({
         <label className="text-xs font-bold uppercase tracking-wider text-gray-500">
           Select Day
         </label>
-        <span className="text-xs text-gray-400">
-          Scroll horizontally for full week
+        <span className="text-xs text-gray-400 hidden sm:inline">
+          Full 7-day culinary schedule
         </span>
       </div>
 
+      {/* Responsive layout: scrollable row on mobile (< md), clean 7-column grid on desktop (>= md) */}
       <div
         ref={scrollContainerRef}
-        className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 px-1 -mx-1"
+        className="flex md:grid md:grid-cols-7 items-center gap-2 overflow-x-auto md:overflow-visible no-scrollbar py-1 px-1 -mx-1"
         role="tablist"
         aria-label="Weekly menu days"
       >
@@ -65,16 +66,17 @@ export const WeeklyDaySelector: React.FC<WeeklyDaySelectorProps> = ({
           return (
             <button
               key={day.full}
+              type="button"
               role="tab"
               aria-selected={isSelected}
               data-active={isSelected}
               onClick={() => onSelectDay(day.full)}
-              className={`min-w-[72px] sm:min-w-[84px] min-h-[52px] sm:min-h-[58px] rounded-xl px-3 py-2 flex flex-col items-center justify-center transition-all duration-200 cursor-pointer select-none shrink-0 border focus-visible:outline-none focus-visible:ring-2 ${
+              className={`min-w-[72px] sm:min-w-[80px] md:min-w-0 min-h-[52px] sm:min-h-[56px] rounded-xl px-2.5 py-2 flex flex-col items-center justify-center transition-all duration-200 cursor-pointer select-none shrink-0 border focus-visible:outline-none focus-visible:ring-2 ${
                 isSelected
                   ? isBoys
-                    ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-500/20 ring-2 ring-blue-300'
-                    : 'bg-pink-600 text-white border-pink-600 shadow-md shadow-pink-500/20 ring-2 ring-pink-300'
-                  : 'bg-white text-gray-700 border-gray-200 hover:border-gray-300 hover:bg-gray-50 active:scale-95'
+                    ? 'bg-blue-600 text-white border-blue-600 shadow-md shadow-blue-500/20 ring-2 ring-blue-300 font-bold'
+                    : 'bg-pink-600 text-white border-pink-600 shadow-md shadow-pink-500/20 ring-2 ring-pink-300 font-bold'
+                  : 'bg-white text-gray-700 border-gray-200/90 hover:border-gray-300 hover:bg-gray-50 active:scale-95 font-medium'
               }`}
             >
               <div className="flex items-center gap-1">
@@ -108,4 +110,3 @@ export const WeeklyDaySelector: React.FC<WeeklyDaySelectorProps> = ({
     </div>
   );
 };
-
