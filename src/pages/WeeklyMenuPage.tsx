@@ -17,11 +17,12 @@ type MealFilter = 'all' | 'veg' | 'non-veg';
 
 export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) => {
   const hostel = getHostelInfo(hostelType);
-  const { dayName: currentDayName, weekOfMonth } = useCurrentDate();
+  const { dayName: currentDayName } = useCurrentDate();
   const isBoys = hostelType === 'boys';
 
-  // State for active week (Ladies has 4 weeks, Boys has 1)
-  const [selectedWeek, setSelectedWeek] = useState<number>(weekOfMonth);
+  // State for active week (Ladies has Week 2 as active running default)
+  const defaultWeek = isBoys ? 1 : 2;
+  const [selectedWeek, setSelectedWeek] = useState<number>(defaultWeek);
 
   // State for selected day (defaults to today's day of week)
   const [selectedDay, setSelectedDay] = useState<string>(currentDayName);
@@ -58,23 +59,31 @@ export const WeeklyMenuPage: React.FC<WeeklyMenuPageProps> = ({ hostelType }) =>
         </div>
 
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
-          <h1 className="font-heading text-xl sm:text-2.5xl font-extrabold text-gray-950 tracking-tight">
-            Weekly Food Menu
-          </h1>
+          <div className="flex items-center gap-2 flex-wrap">
+            <h1 className="font-heading text-xl sm:text-2.5xl font-extrabold text-gray-950 tracking-tight">
+              Weekly Food Menu
+            </h1>
+            {!isBoys && (
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-[#FDF2F8] text-[#DB2777] border border-[#FCE7F3] shadow-2xs">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#DB2777] animate-pulse shrink-0" />
+                <span>Week 2 — Active Menu</span>
+              </span>
+            )}
+          </div>
           <p className="text-xs text-gray-500 font-medium">
             {hostel.name} · ITER Campus-1
           </p>
         </div>
       </section>
 
-      {/* Week Selector for Ladies Hostel (Month has 4 rotating weeks) */}
+      {/* Week Selector for Ladies Hostel */}
       {!isBoys && (
         <WeekSelector
           selectedWeek={selectedWeek}
           onSelectWeek={setSelectedWeek}
-          currentCalendarWeek={weekOfMonth}
           hostelType={hostelType}
           totalWeeks={hostel.totalWeeks}
+          activeWeek={2}
         />
       )}
 

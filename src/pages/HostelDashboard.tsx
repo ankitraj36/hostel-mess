@@ -17,11 +17,12 @@ type MealFilter = 'all' | 'veg' | 'non-veg';
 
 export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) => {
   const hostel = getHostelInfo(hostelType);
-  const { greeting, formattedDate, date, weekOfMonth } = useCurrentDate();
+  const { greeting, formattedDate, date } = useCurrentDate();
   const isBoys = hostelType === 'boys';
 
-  // For Ladies Hostel, support switching between 4 weeks (defaults to current calendar week)
-  const [selectedWeek, setSelectedWeek] = useState<number>(weekOfMonth);
+  // For Ladies Hostel, Week 2 is the active running schedule by default
+  const defaultWeek = isBoys ? 1 : 2;
+  const [selectedWeek, setSelectedWeek] = useState<number>(defaultWeek);
   const [filter, setFilter] = useState<MealFilter>('all');
 
   // Today's menu for the selected week
@@ -42,7 +43,7 @@ export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) 
       <section className="bg-white rounded-2xl p-3.5 sm:p-5 border border-gray-100 shadow-2xs">
         <div className="flex items-center justify-between gap-2">
           <div>
-            <div className="flex items-center gap-1.5 mb-1">
+            <div className="flex items-center gap-1.5 mb-1 flex-wrap">
               <span
                 className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] sm:text-[11px] font-bold uppercase tracking-wider ${
                   isBoys ? 'bg-blue-100 text-blue-800' : 'bg-pink-100 text-pink-800'
@@ -50,6 +51,12 @@ export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) 
               >
                 {hostel.residenceLabel}
               </span>
+              {!isBoys && (
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold bg-[#FDF2F8] text-[#DB2777] border border-[#FCE7F3] shadow-2xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#DB2777] animate-pulse shrink-0" />
+                  <span>Week 2 — Active Menu</span>
+                </span>
+              )}
               <span className="text-[11px] text-gray-500 font-medium hidden xs:inline">
                 ITER Campus-1
               </span>
@@ -116,14 +123,14 @@ export const HostelDashboard: React.FC<HostelDashboardProps> = ({ hostelType }) 
         )}
       </section>
 
-      {/* Week Selector for Ladies Hostel (Month has 4 rotating weeks) */}
+      {/* Week Selector for Ladies Hostel */}
       {!isBoys && (
         <WeekSelector
           selectedWeek={selectedWeek}
           onSelectWeek={setSelectedWeek}
-          currentCalendarWeek={weekOfMonth}
           hostelType={hostelType}
           totalWeeks={hostel.totalWeeks}
+          activeWeek={2}
         />
       )}
 

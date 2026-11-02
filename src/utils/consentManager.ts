@@ -129,3 +129,4 @@ export function clearAllLocalData(): void {
     window.dispatchEvent(new CustomEvent(CONSENT_CHANGE_EVENT, { detail: null }));
   }
 }
+

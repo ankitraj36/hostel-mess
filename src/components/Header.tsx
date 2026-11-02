@@ -55,9 +55,15 @@ export const Header: React.FC<HeaderProps> = ({ hostelType }) => {
                 </span>
               )}
               {isGirls && (
-                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-pink-100 text-pink-700">
-                  Girls
-                </span>
+                <>
+                  <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-pink-100 text-pink-700">
+                    Girls
+                  </span>
+                  <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#FDF2F8] text-[#DB2777] border border-[#FCE7F3] shadow-2xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#DB2777] animate-pulse shrink-0" />
+                    <span>Week 2 — Active Menu</span>
+                  </span>
+                </>
               )}
             </div>
             <p className="text-[11px] text-gray-500 font-medium tracking-wide mt-0.5">

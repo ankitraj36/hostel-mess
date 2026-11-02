@@ -14,10 +14,18 @@ export function getHostelInfo(type: HostelType): HostelInfo {
 }
 
 /**
- * Calculates current week of the month (1, 2, 3, or 4)
- * Day 1-7: Week 1, 8-14: Week 2, 15-21: Week 3, 22-end: Week 4
+ * Active running week for Girls (Ladies) Hostel
  */
-export function getCurrentWeekNumber(date: Date = new Date()): number {
+export const ACTIVE_GIRLS_WEEK = 2;
+
+/**
+ * Calculates current week of the month (1, 2, 3, or 4)
+ * For Girls Hostel, returns ACTIVE_GIRLS_WEEK (2) as the active running schedule.
+ */
+export function getCurrentWeekNumber(date: Date = new Date(), hostelType?: HostelType): number {
+  if (hostelType === 'girls') {
+    return ACTIVE_GIRLS_WEEK;
+  }
   const dayOfMonth = date.getDate();
   const week = Math.ceil(dayOfMonth / 7);
   return Math.min(4, Math.max(1, week));
@@ -26,7 +34,7 @@ export function getCurrentWeekNumber(date: Date = new Date()): number {
 /**
  * Get a specific week's menu for a hostel.
  * Boys hostel only has 1 week (always returns week 1).
- * Girls hostel has 4 distinct weeks.
+ * Girls hostel has distinct weeks.
  */
 export function getHostelWeek(hostelType: HostelType, weekNum: number = 1): WeekMenu {
   const hostel = getHostelInfo(hostelType);
@@ -39,14 +47,14 @@ export function getHostelWeek(hostelType: HostelType, weekNum: number = 1): Week
 
 /**
  * Get Today's menu for a hostel.
- * Automatically looks up the current week if weekNumber is omitted.
+ * For Girls Hostel, defaults to ACTIVE_GIRLS_WEEK (Week 2).
  */
 export function getTodayMenu(
   hostelType: HostelType,
   date: Date = new Date(),
   weekNumber?: number
 ): DailyMenu | undefined {
-  const effectiveWeek = weekNumber ?? getCurrentWeekNumber(date);
+  const effectiveWeek = weekNumber ?? (hostelType === 'girls' ? ACTIVE_GIRLS_WEEK : 1);
   const weekMenu = getHostelWeek(hostelType, effectiveWeek);
   const currentDayIndex = date.getDay(); // 0 = Sun, 1 = Mon, ..., 6 = Sat
   return weekMenu.days.find((m) => m.dayIndex === currentDayIndex) || weekMenu.days[0];
@@ -54,13 +62,14 @@ export function getTodayMenu(
 
 /**
  * Get a specific day's menu for a hostel and week.
+ * For Girls Hostel, defaults to ACTIVE_GIRLS_WEEK (Week 2).
  */
 export function getDayMenu(
   hostelType: HostelType,
   dayName: string,
   weekNumber?: number
 ): DailyMenu | undefined {
-  const effectiveWeek = weekNumber ?? 1;
+  const effectiveWeek = weekNumber ?? (hostelType === 'girls' ? ACTIVE_GIRLS_WEEK : 1);
   const weekMenu = getHostelWeek(hostelType, effectiveWeek);
   return weekMenu.days.find((m) => m.day.toLowerCase() === dayName.toLowerCase());
 }

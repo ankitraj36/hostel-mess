@@ -268,6 +268,6 @@ export const girlsHostelInfo: HostelInfo = {
   rotationType: 'monthly_4_weeks',
   totalWeeks: 4,
   weeks: ladiesWeeksData,
-  weeklyMenu: ladiesWeeksData[0]?.days || [],
+  weeklyMenu: ladiesWeeksData[1]?.days || ladiesWeeksData[0]?.days || [],
 };
 

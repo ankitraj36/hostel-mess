@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Meal, HostelType } from '../data/menuTypes';
-import { getTodayMenu, getHostelWeek, getCurrentWeekNumber } from '../data';
+import { getTodayMenu, getHostelWeek, ACTIVE_GIRLS_WEEK } from '../data';
 
 export interface NextMealState {
   meal: Meal | null;
@@ -21,7 +21,7 @@ export function useNextMeal(hostelType: HostelType, weekNumber?: number): NextMe
     return () => clearInterval(timer);
   }, []);
 
-  const effectiveWeek = weekNumber ?? getCurrentWeekNumber(now);
+  const effectiveWeek = weekNumber ?? (hostelType === 'girls' ? ACTIVE_GIRLS_WEEK : 1);
   const todayMenu = getTodayMenu(hostelType, now, effectiveWeek);
   const currentWeekMenu = getHostelWeek(hostelType, effectiveWeek);
 

@@ -101,3 +101,4 @@ export const CookieConsentBanner: React.FC = () => {
     </>
   );
 };
+
